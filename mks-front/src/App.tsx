@@ -1,13 +1,14 @@
-import React from "react";
-import logo from "./logo.svg";
-import "./App.css";
-import ProductList from "./components/store/productList";
+
+
+import { CartProvider } from './context/cartContext';
+import Main from './pages/main';
 
 function App() {
   return (
     <div className="App">
-    
-      <ProductList />
+      <CartProvider>
+        <Main />
+      </CartProvider>
     </div>
   );
 }

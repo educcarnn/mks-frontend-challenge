@@ -1,4 +1,4 @@
-// src/hooks/useProductList.ts
+
 import { useQuery, UseQueryResult } from 'react-query';
 
 export interface Product {
