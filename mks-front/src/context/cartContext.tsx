@@ -10,6 +10,7 @@ interface CartContextProps {
 export interface CartItem {
   id: number;
   name: string;
+  photo: string;
   quantity: number;
   price: number;
 }
