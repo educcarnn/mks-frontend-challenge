@@ -1,107 +1,6 @@
 import { useState } from "react";
-import styled from "styled-components";
-
+import { StyledDrawer, TotalSection, CheckoutButton, CartTexts, CartItem, RemoveButton, QuantityItem, QuantityButton, QuantityWrapper, RightQuantityBar, LeftQuantityBar, CardName, CloseButton } from "./style";
 import { useCart } from "../../context/cartContext";
-
-const StyledDrawer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-  background-color: #0f52ba;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  width: 50%;
-  z-index: 1000;
-  overflow: auto;
-  .title {
-    font-weight: bold;
-    color: white;
-    font-size: x-large;
-  }
-`;
-
-const CloseButton = styled.button`
-  background-color: #000000;
-  border-radius: 100%;
-  width: 10%;
-  color: #fff;
-  padding: 8px;
-  border: none;
-  cursor: pointer;
-`;
-
-const CartItem = styled.li`
-      margin-bottom: 16px;
-    background-color: white;
-    display: flex;
-    flex-direction: row;
-    padding: 16px;
-    width: 100%;
-    border-radius: 8px;
-    box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
-    position: relative;
-    align-items: center;
-`;
-
-const QuantityButton = styled.button`
-  margin: 0 8px;
-`;
-
-const CardName = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-content: space-between;
-  align-items: center;
-  gap: 5rem;
-  height: 10%;
-`;
-
-const TotalSection = styled.div`
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  margin-top: 20px;
-`;
-
-const CheckoutButton = styled.button`
-  background: #000000;
-
-  color: white;
-  padding: 10px;
-  height: 100px;
-  font-size: 24px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-`;
-
-const CartTexts = styled.div`
-  display: flex;
-  height: 50%;
-  font-size: 24px;
-  color: white;
-  flex-direction: row;
-  justify-content: space-around;
-`;
-
-const RemoveButton = styled.button`
-  background-color: black;
-  border-radius: 100%;
-  color: #fff;
-  border: none;
-  padding: 5px 8px;
-  cursor: pointer;
-  align-self: flex-start;
-  margin-left: auto;
-  margin-top: -30px;
-    margin-right: -25px;
-
-`;
-
 
 const CartDrawer = () => {
   const { items, removeItem, updateItemQuantity } = useCart();
@@ -140,18 +39,26 @@ const CartDrawer = () => {
       <ul>
         {items.map((item) => (
           <CartItem key={item.id}>
-           
             <img src={item.photo} alt={item.name} />
             <span>{item.name}</span>
+
             <div>
-              <QuantityButton onClick={() => handleDecreaseQuantity(item.id)}>
-                -
-              </QuantityButton>
-              <span>Qtd: {item.quantity}</span>
-              <QuantityButton onClick={() => handleIncreaseQuantity(item.id)}>
-                +
-              </QuantityButton>
+              <span>Qtd:</span>
+              <QuantityItem>
+                <QuantityButton onClick={() => handleDecreaseQuantity(item.id)}>
+                  -
+                </QuantityButton>
+                <QuantityWrapper>
+                  <LeftQuantityBar />
+                  <span>{item.quantity}</span>
+                  <RightQuantityBar />
+                </QuantityWrapper>
+                <QuantityButton onClick={() => handleIncreaseQuantity(item.id)}>
+                  +
+                </QuantityButton>
+              </QuantityItem>
             </div>
+
             <span>R$ {(item.price * item.quantity).toFixed(2)}</span>
             <RemoveButton onClick={() => removeItem(item.id)}>X</RemoveButton>
           </CartItem>
