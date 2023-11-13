@@ -4,7 +4,7 @@ interface CartContextProps {
   items: Array<CartItem>;
   addItem: (item: CartItem) => void;
   removeItem: (itemId: number) => void;
-  updateItemQuantity: (itemId: number, quantity: number) => void; // Adicionando a função para atualizar a quantidade
+  updateItemQuantity: (itemId: number, quantity: number) => void; 
 }
 
 export interface CartItem {

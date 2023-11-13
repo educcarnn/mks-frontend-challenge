@@ -45,11 +45,14 @@ const ProductListItem = styled.li`
 
 const ProductButton = styled.button`
   background-color: #0f52ba;
+  color: white;
  width: 100%;
   height: 32px;
   border-radius: 0 0 10px 10px;
   
 `;
+
+
 
 const ProductList = (props: ProductListProps) => {
   const { data: products, isLoading, isError } = useProductList();
@@ -73,7 +76,7 @@ const ProductList = (props: ProductListProps) => {
               <h3>{product.name}</h3>
               <p className="padding">R${product.price}</p>
             </ProductNamePrice>
-            <p>{product.brand}</p>
+   
             <p>{product.description}</p>
             <ProductButton
               onClick={() =>

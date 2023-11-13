@@ -64,7 +64,7 @@ body{
     color: black;
 }
 button{
-    color: white;
+
 
     cursor: pointer;
     border: none;

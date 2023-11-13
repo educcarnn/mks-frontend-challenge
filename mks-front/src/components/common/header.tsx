@@ -1,10 +1,10 @@
-import  { useState } from 'react';
-import styled from 'styled-components';
-import CartDrawer from '../cart/cartDrawer';
+import { useState } from "react";
+import styled from "styled-components";
+import CartDrawer from "../cart/cartDrawer";
 
 const HeaderContainer = styled.header`
-  background: #0F52BA;
-  padding: 16px;
+  background: #0f52ba;
+  padding: 32px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,14 +14,25 @@ const HeaderContainer = styled.header`
   }
 `;
 
+const LogoDiv = styled.div`
+  display: flex;
+  gap: 5%;
+  align-items: flex-end;
+  
+`
+
 const Logo = styled.h1`
-  color: #FFF;
+  color: #fff;
+  font-weight: bold;
   font-size: 24px;
   margin: 0;
 `;
 
+const LogoSecond = styled.div`
+  color: white;
+`
 const CartIcon = styled.div`
-  color: #FFF;
+  color: #fff;
   font-size: 24px;
   cursor: pointer;
 `;
@@ -35,9 +46,13 @@ const Header = () => {
 
   return (
     <HeaderContainer>
-      <Logo>MKS Sistemas</Logo>
+      <LogoDiv>
+        <Logo>MKS</Logo>
+        <LogoSecond>Sistemas</LogoSecond>
+      </LogoDiv>
       <CartIcon onClick={handleCartClick}>🛒</CartIcon>
-      {isCartOpen && <CartDrawer />} {/* Renderiza o carrinho apenas se estiver aberto */}
+      {isCartOpen && <CartDrawer />}{" "}
+
     </HeaderContainer>
   );
 };
