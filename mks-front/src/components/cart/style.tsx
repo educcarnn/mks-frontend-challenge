@@ -6,7 +6,7 @@ export const StyledDrawer = styled.div`
   align-items: center;
   justify-content: space-between;
   background-color: #0f52ba;
-  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.3);
   position: fixed;
   top: 0;
   right: 0;
@@ -40,7 +40,7 @@ export const CartItem = styled.li`
   padding: 24px;
   width: 100%;
   border-radius: 8px;
-  border: 1px solid black;
+
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
   position: relative;
   align-items: center;

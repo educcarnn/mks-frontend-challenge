@@ -31,15 +31,20 @@ const ProductNamePrice = styled.div`
 
 const ProductListUl = styled.ul`
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: flex-end;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    align-items: center;
 `;
 
 const ProductListItem = styled.li`
   margin: 16px;
   text-align: center;
+  padding: 16px;
+  border-radius: 8px; 
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); 
 
   .text {
     font-size: 12px;
@@ -49,6 +54,7 @@ const ProductListItem = styled.li`
     width: 80%;
   }
 `;
+
 
 const ProductButton = styled.button`
   display: flex;
