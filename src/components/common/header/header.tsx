@@ -1,70 +1,9 @@
 import { useState } from "react";
-import styled from "styled-components";
+import { HeaderContainer, LogoDiv, Logo, LogoSecond, CardItem, CartIcon, CartCount } from "./style";
 import CartDrawer from "../../cart/cartDrawer";
 import { useCart } from "../../../context/cartContext";
 import Cart from "../../../assets/cart-icon.svg";
 
-const HeaderContainer = styled.header`
-  background: #0f52ba;
-  padding: 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-`;
-
-const LogoDiv = styled.div`
-  display: flex;
-  gap: 5%;
-  align-items: flex-end;
-`;
-
-const Logo = styled.h1`
-  color: #fff;
-  font-weight: bold;
-  font-size: 24px;
-  margin: 0;
-  display: flex;
-  
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-evenly;
-`;
-
-const LogoSecond = styled.div`
-  color: white;
-`;
-
-const CartIcon = styled.div`
-  color: #fff;
-  font-size: 24px;
-  cursor: pointer;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-`;
-
-const CardItem = styled.div`
-  display: flex;
-  background-color: white;
-  flex-direction: column;
-  border-radius: 8px;
-  padding: 16px;
-  width: 5%;
-  .image {
-    width: 16px;
-    height: 16px;
-    margin: 0;
-  }
-`;
-
-const CartCount = styled.strong`
-  color: black;
-`;
 
 const Header = () => {
   const { totalQuantity } = useCart();
