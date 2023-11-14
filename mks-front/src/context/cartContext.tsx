@@ -4,7 +4,8 @@ interface CartContextProps {
   items: Array<CartItem>;
   addItem: (item: CartItem) => void;
   removeItem: (itemId: number) => void;
-  updateItemQuantity: (itemId: number, quantity: number) => void; 
+  updateItemQuantity: (itemId: number, quantity: number) => void;
+  totalQuantity: number; 
 }
 
 export interface CartItem {
@@ -58,11 +59,14 @@ export const CartProvider = ({ children }: CartProviderProps) => {
     );
   };
 
+  const totalQuantity = cartItems.reduce((total, item) => total + item.quantity, 0);
+
   const contextValue: CartContextProps = {
     items: cartItems,
     addItem,
     removeItem,
     updateItemQuantity,
+    totalQuantity,
   };
 
   return <CartContext.Provider value={contextValue}>{children}</CartContext.Provider>;

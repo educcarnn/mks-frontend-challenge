@@ -39,7 +39,7 @@ const CartDrawer = () => {
       <ul>
         {items.map((item) => (
           <CartItem key={item.id}>
-            <img src={item.photo} alt={item.name} />
+            <img src={item.photo} alt={item.name} className="image"/>
             <span>{item.name}</span>
 
             <div>
@@ -59,7 +59,7 @@ const CartDrawer = () => {
               </QuantityItem>
             </div>
 
-            <span>R$ {(item.price * item.quantity).toFixed(2)}</span>
+            <strong>R$ {(item.price * item.quantity).toFixed(2)}</strong>
             <RemoveButton onClick={() => removeItem(item.id)}>X</RemoveButton>
           </CartItem>
         ))}

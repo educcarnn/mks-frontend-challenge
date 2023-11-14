@@ -24,7 +24,7 @@ export const StyledDrawer = styled.div`
 export const CloseButton = styled.button`
   background-color: #000000;
   border-radius: 100%;
-  width: 10%;
+
   color: #fff;
   padding: 8px;
   border: none;
@@ -36,13 +36,19 @@ export const CartItem = styled.li`
   background-color: white;
   display: flex;
   flex-direction: row;
-  padding: 16px;
+  gap: 5%;
+  padding: 24px;
   width: 100%;
   border-radius: 8px;
   border: 1px solid black;
   box-shadow: 0 0 10px 2px rgba(0, 0, 0, 0.2);
   position: relative;
   align-items: center;
+
+  .image {
+    width: 50px;
+    height: 50px;
+  }
 `;
 
 export const QuantityButton = styled.button`
@@ -53,10 +59,10 @@ export const QuantityButton = styled.button`
 export const CardName = styled.div`
   display: flex;
   flex-direction: row;
-  align-content: space-between;
   align-items: center;
-  gap: 5rem;
+  width: 80%;
   height: 10%;
+  gap: 70%;
 `;
 
 export const TotalSection = styled.div`
